@@ -1,18 +1,14 @@
-##################### Extra Hard Starting Project ######################
 import os
-
 import pandas as pd
 import datetime as dt
 import smtplib
 import random
-
 
 # Gets today's date
 datetime = dt.datetime.now()
 date = datetime.date()
 day = date.day
 month = date.month
-year = date.year
 
 my_email = "pythonuser112@gmail.com"
 password = "vuvemheklbeqqahu"
@@ -26,11 +22,9 @@ info = {'name': ['Cristina', 'Joca', 'Marta'],
 # Stores info as a dataframe and writes it to a CSV file
 df = pd.DataFrame(info)
 df.to_csv("birthdays.csv", index=False)
-
 # Reads birthday's file
 read_birthday_file = pd.read_csv("birthdays.csv")
 info_dict = read_birthday_file.to_dict("records")
-
 
 # Checks if today's date is the same as user birthday date
 for dictionary in info_dict:
