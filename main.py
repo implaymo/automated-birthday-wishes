@@ -32,7 +32,7 @@ info_dict = read_birthday_file.to_dict("records")
 
 # Checks if today's date is the same as user birthday date
 for line in info_dict:
-    if line["year"] == year and line["month"] == month and line["day"] == day:
+    if line["month"] == month and line["day"] == day:
         folder_path = "letter_templates"
         # Gets every file that ends with txt at folder_path
         file_list = [folder for folder in os.listdir(folder_path) if folder.endswith(".txt")]
