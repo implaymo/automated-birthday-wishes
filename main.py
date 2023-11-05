@@ -3,6 +3,12 @@ import pandas as pd
 import datetime as dt
 import smtplib
 import random
+from dotenv import load_dotenv
+
+def configure():
+    load_dotenv()
+
+configure()
 
 # Gets today's date
 datetime = dt.datetime.now()
@@ -10,14 +16,14 @@ date = datetime.date()
 day = date.day
 month = date.month
 
-my_email = "pythonuser112@gmail.com"
-password = "vuvemheklbeqqahu"
+my_email = os.getenv("my_email")
+password = os.getenv("password")
 
 info = {'name': ['Cristina', 'Joca', 'Marta'],
-        'email': ['pythonuser112@gmail.com', 'pythonuser112@gmail.com', 'pythonuser112@gmail.com'],
+        'email': [my_email, my_email, my_email],
         'year': [2023, 2023, 2023],
-        'month': [10, 10, 10],
-        'day': [31, 31, 31]}
+        'month': [11, 11, 11],
+        'day': [5, 5, 5]}
 
 # Stores info as a dataframe and writes it to a CSV file
 df = pd.DataFrame(info)
